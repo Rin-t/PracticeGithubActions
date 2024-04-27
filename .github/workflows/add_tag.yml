@@ -29,7 +29,7 @@ jobs:
           echo "Merge commit message: $MERGE_COMMIT"
           VERSION=$(echo $MERGE_COMMIT | sed -n 's/Merge pull request .* from .*release\/ver\(.*\)/\1/p')
           echo "version: $VERSION"
-          echo "::set-output name=VERSION::$VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           if [ -z "$VERSION" ]; then
             echo "ERROR: No version extracted."
             exit 1
