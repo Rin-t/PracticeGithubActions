@@ -22,7 +22,7 @@ jobs:
         id: extract_version
         run: |
           echo "Branch name: $GIHUB_REF"
-          VSRION=$(echo $GITHUB_REF | sed -n 's/.*release\/ver(.*\)/\1/p')
+          VERSION=$(echo $GITHUB_REF | sed -n 's/.*release\/ver\(.*\)/\1/p')
           echo "version: $VERSION"
           echo "::set-output name=VERSION::$VERSION"
 
