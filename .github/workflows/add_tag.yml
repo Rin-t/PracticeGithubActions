@@ -30,6 +30,10 @@ jobs:
           VERSION=$(echo $MERGE_COMMIT | sed -n 's/Merge pull request .* from .*release\/ver\(.*\)/\1/p')
           echo "version: $VERSION"
           echo "::set-output name=VERSION::$VERSION"
+          if [ -z "$VERSION" ]; then
+            echo "ERROR: No version extracted."
+            exit 1
+          fi
 
       - name: add tag
         if: steps.extract_version.outputs.VERSION != ''
