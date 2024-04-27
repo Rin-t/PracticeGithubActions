@@ -16,7 +16,7 @@ jobs:
       - name: Set up git
         run: |
           git config user.name "GitHub Actions"
-          fit config user.email "actions@github.com"
+          git config user.email "actions@github.com"
 
       - name: version frome branch name
         id: extract_version
