@@ -21,8 +21,9 @@ jobs:
       - name: version frome branch name
         id: extract_version
         run: |
-          echo "Branch name: $GITHUB_REF"
-          VERSION=$(echo $GITHUB_REF | sed -n 's/.*release\/ver\(.*\)/\1/p')
+          MERGE_COMMIT=$(git log --merges -1 --pretty=format:"%s")
+          echo "Merge commit message: $MERGE_COMMIT"
+          VERSION=$(echo $MERGE_COMMIT | sed -n 's/Merge pull request .* from .*release\/ver\(.*\)/\1/p')
           echo "version: $VERSION"
           echo "::set-output name=VERSION::$VERSION"
 
