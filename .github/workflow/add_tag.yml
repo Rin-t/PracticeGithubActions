@@ -1,0 +1,34 @@
+name: add_tag
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  add_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v4
+
+      - name: Set up git
+        run: |
+          git config user.name "GitHub Actions"
+          fit config user.email "actions@github.com"
+
+      - name: version frome branch name
+        id: extract_version
+        run: |
+          echo "Branch name: $GIHUB_REF"
+          VSRION=$(echo $GITHUB_REF | sed -n 's/.*release\/ver(.*\)/\1/p')
+          echo "version: $VERSION"
+          echo "::set-output name=VERSION::$VERSION"
+
+      - name: add tag
+        if: steps.extract_version.outputs.VERSION != ''
+        run: |
+          git tag ver$({ steps.extract_version.outputs.VERSION }) $GITHUB_SHA
+          git push origin ver${{ steps.extract_version.outputs.VERSION }}
+
