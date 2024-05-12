@@ -1,9 +1,21 @@
 
+$project_name = "PracticeCICD.xcodeproj"
+
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  lane :create_branch do
+
+    bump_type = options.fetch(:bump_type, "minor")
+    increment_version_number(bump_type: bump_type)
+
+    # リリースブランチの作成とプッシュ
+    new_version = get_version_number(xcodeproj: $project_name)
+    branch_name = "release/ver#{new_version}"
+
+    sh("git checkout -b #{branch_name}")
+    sh("git add .")
+    sh("git commit -m #{new_version}に更新")
+    sh("git push --set-upstream origin #{branch_name}")
   end
 end
