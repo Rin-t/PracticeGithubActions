@@ -11,7 +11,7 @@ platform :ios do
     # リリースブランチの作成とプッシュ
     new_version = get_version_number(xcodeproj: $project_name)
     branch_name = "release/ver#{new_version}"
-
+    sh("echo #{new_version}")
     sh("git checkout -b #{branch_name}")
     sh("git add .")
     sh("git commit -m #{new_version}に更新")
