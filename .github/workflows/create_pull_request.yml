@@ -3,40 +3,23 @@ name: Create Pull Requests
 on:
   push:
     branches:
-      - 'release/*'
+      - 'release/**'
 
 jobs:
-  create-pull-requests:
+  create-prs:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Setup Git config
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
+    - name: Set up GitHub CLI
+      uses: actions/setup-gh@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Pull Request to develop
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Merge release branch into develop
-          title: Merge release branch into develop
-          branch: ${{ github.head_ref }}
-          base: develop
-          body: |
-            Automatically created by GitHub Actions.
+    - name: Create pull request to develop
+      run: gh pr create --base develop --head ${{ github.ref }} --title "Merge ${{ github.ref }} into develop" --body "This PR merges changes from ${{ github.ref }} into develop."
 
-      - name: Create Pull Request to main
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Merge release branch into main
-          title: Merge release branch into main
-          branch: ${{ github.head_ref }}
-          base: main
-          body: |
-            Automatically created by GitHub Actions.
+    - name: Create pull request to main
+      run: gh pr create --base main --head ${{ github.ref }} --title "Merge ${{ github.ref }} into main" --body "This PR merges changes from ${{ github.ref }} into main."
