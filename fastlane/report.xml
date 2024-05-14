@@ -5,42 +5,42 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000405">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000571">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: increment_version_number" time="0.175264">
+      <testcase classname="fastlane.lanes" name="1: increment_version_number" time="0.183955">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: get_version_number" time="0.03526">
+      <testcase classname="fastlane.lanes" name="2: get_version_number" time="0.04315">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: echo 2.4.0" time="0.004695">
+      <testcase classname="fastlane.lanes" name="3: echo 2.6.0" time="0.00518">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: git checkout -b release/ver2.4.0" time="0.016538">
+      <testcase classname="fastlane.lanes" name="4: git checkout -b release/ver2.6.0" time="0.018057">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: git add ." time="0.015205">
+      <testcase classname="fastlane.lanes" name="5: git add ." time="0.015651">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="6: git commit -m &apos;2.4.0に更新&apos;" time="0.031913">
+      <testcase classname="fastlane.lanes" name="6: git commit -m &apos;2.6.0に更新&apos;" time="0.037472">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="7: git push --set-upstream origin release/ver2.4.0" time="1.219106">
+      <testcase classname="fastlane.lanes" name="7: git push --set-upstream origin release/ver2.6.0" time="1.178464">
         
       </testcase>
     
