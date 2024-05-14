@@ -13,13 +13,38 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up GitHub CLI
-      uses: actions/setup-gh@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Create pull request to develop
-      run: gh pr create --base develop --head ${{ github.ref }} --title "Merge ${{ github.ref }} into develop" --body "This PR merges changes from ${{ github.ref }} into develop."
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const github = require('@actions/github');
+          const context = github.context;
+
+          const result = await github.rest.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `Merge ${context.ref} into develop`,
+            head: context.ref,
+            base: 'develop',
+            body: `This PR merges changes from ${context.ref} into develop.`,
+          });
+
+          console.log(result.data.html_url);
 
     - name: Create pull request to main
-      run: gh pr create --base main --head ${{ github.ref }} --title "Merge ${{ github.ref }} into main" --body "This PR merges changes from ${{ github.ref }} into main."
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const github = require('@actions/github');
+          const context = github.context;
+
+          const result = await github.rest.pulls.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `Merge ${context.ref} into main`,
+            head: context.ref,
+            base: 'main',
+            body: `This PR merges changes from ${context.ref} into main.`,
+          });
+
+          console.log(result.data.html_url);
