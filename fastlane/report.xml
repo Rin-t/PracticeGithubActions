@@ -5,42 +5,29 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000405">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.0005">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: increment_version_number" time="0.175264">
+      <testcase classname="fastlane.lanes" name="1: increment_version_number" time="0.18083">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: get_version_number" time="0.03526">
+      <testcase classname="fastlane.lanes" name="2: get_version_number" time="0.043966">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: echo 2.4.0" time="0.004695">
+      <testcase classname="fastlane.lanes" name="3: echo 2.4.0" time="0.005542">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: git checkout -b release/ver2.4.0" time="0.016538">
+      <testcase classname="fastlane.lanes" name="4: git checkout -b release/ver2.4.0" time="0.016005">
         
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="5: git add ." time="0.015205">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="6: git commit -m &apos;2.4.0に更新&apos;" time="0.031913">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="7: git push --set-upstream origin release/ver2.4.0" time="1.219106">
+          <failure message="/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/fast_file.rb:222:in `sh&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/fast_file.rb:216:in `sh&apos;&#10;Fastfile:15:in `block (2 levels) in parsing_binding&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/lane.rb:41:in `call&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/runner.rb:45:in `chdir&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/runner.rb:45:in `execute&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/lane_manager.rb:46:in `cruise_lane&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/command_line_handler.rb:34:in `handle&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/commander-4.6.0/lib/commander/command.rb:187:in `call&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/commander-4.6.0/lib/commander/command.rb:157:in `run&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/commands_generator.rb:363:in `run&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/commands_generator.rb:43:in `start&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/fastlane/lib/fastlane/cli_tools_distributor.rb:123:in `take_off&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/fastlane-2.220.0/bin/fastlane:23:in `&lt;top (required)&gt;&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/bin/fastlane:25:in `load&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/bin/fastlane:25:in `&lt;top (required)&gt;&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/cli/exec.rb:58:in `load&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/cli/exec.rb:58:in `kernel_load&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/cli/exec.rb:23:in `run&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/cli.rb:451:in `exec&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/vendor/thor/lib/thor/command.rb:28:in `run&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/vendor/thor/lib/thor.rb:527:in `dispatch&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/cli.rb:34:in `dispatch&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/vendor/thor/lib/thor/base.rb:584:in `start&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/cli.rb:28:in `start&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/bundler-2.5.9/exe/bundle:28:in `block in &lt;top (required)&gt;&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/3.3.0/bundler/friendly_errors.rb:117:in `with_friendly_errors&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/lib/ruby/gems/3.3.0/gems/bundler-2.5.9/exe/bundle:20:in `&lt;top (required)&gt;&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/bin/bundle:25:in `load&apos;&#10;/Users/rin/.rbenv/versions/3.3.1/bin/bundle:25:in `&lt;main&gt;&apos;&#10;&#10;Exit status of command &apos;git checkout -b release/ver2.4.0&apos; was 128 instead of 0.&#10;fatal: a branch named &apos;release/ver2.4.0&apos; already exists&#10;" />
         
       </testcase>
     
