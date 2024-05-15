@@ -11,8 +11,9 @@ permissions:
 jobs:
   add_tag:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout branch
+      - name: Checkout branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
