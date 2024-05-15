@@ -14,7 +14,7 @@ platform :ios do
     sh("echo #{new_version}")
     sh("git checkout -b #{branch_name}")
     sh("git add ../")
-    # sh("git commit -m '#{new_version}に更新'")
-    # sh("git push --set-upstream origin #{branch_name}")
+    sh("git commit -m '#{new_version}に更新'")
+    sh("git push --set-upstream origin #{branch_name}")
   end
 end
