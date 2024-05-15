@@ -2,3 +2,4 @@
 *.swp // これも指定しておくと便利
 
 *.xcuserstate
+fastlane/report.xml
